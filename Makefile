@@ -1,10 +1,10 @@
-targets = toce-wales.pdf
+targets = tocewales-main.pdf
 
 all: $(targets)
 
 pdflatex = pdflatex -interaction=errorstopmode -halt-on-error
 
-%.pdf: %.tex toce-wales.bib
+%.pdf: %.tex tocewales-body.tex tocewales.bib
 	$(pdflatex) $<
 	bibtex $*
 	$(pdflatex) $<
